@@ -7,20 +7,33 @@ pragma solidity >=0.4.22 <0.7.0;
 contract ServiceProvider {
 
     uint256 requirement;
+    uint256 paymentAmount;
+    uint256 marketDemand;
 
     /**
      * @dev Store value in variable
-     * @param num value to store
+     * @param req value to store
      */
-    function fullfillRequirements(uint256 req) public {
+    function getRequirements(uint256 req) public {
         requirement = req;
     }
+    
+    /**
+     * @dev Store value in variable
+     * @param req value to store
+     */
+     function marketDemand() public view returns (uint256){ 
+        marketDemand = 100;
+        return marketDemand;
+    }
+     
 
     /**
      * @dev Return value 
-     * @return value of 'number'
+     * @return value of 'Payment Amount'
      */
-    function ProcessPayments() public view returns (uint256){
-        return requirement;
+    function processPayments() public view returns (uint256){
+        paymentAmount = requirement + marketDemand;
+        return paymentAmount;
     }
 }
