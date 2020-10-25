@@ -33,7 +33,7 @@ contract ServiceProvider {
      * @return value of 'Payment Amount'
      */
     function processPayments() public view returns (uint256){
-        paymentAmount = requirement + marketDemand;
+        paymentAmount = requirement + marketDemand();
         return paymentAmount;
     }
 }
