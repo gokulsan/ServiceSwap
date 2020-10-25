@@ -1,26 +1,26 @@
 pragma solidity >=0.4.22 <0.7.0;
 
 /**
- * @title Storage
+ * @title Service Provider
  * @dev Store & retreive value in a variable
  */
-contract Storage {
+contract ServiceProvider {
 
-    uint256 number;
+    uint256 requirement;
 
     /**
      * @dev Store value in variable
      * @param num value to store
      */
-    function store(uint256 num) public {
-        number = num;
+    function fullfillRequirements(uint256 req) public {
+        requirement = req;
     }
 
     /**
      * @dev Return value 
      * @return value of 'number'
      */
-    function retreive() public view returns (uint256){
-        return number;
+    function ProcessPayments() public view returns (uint256){
+        return requirement;
     }
 }
