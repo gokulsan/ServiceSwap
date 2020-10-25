@@ -8,7 +8,7 @@ contract ServiceProvider {
 
     uint256 requirement;
     uint256 paymentAmount;
-    uint256 marketDemand;
+    uint256 demandValue;
 
     /**
      * @dev Store value in variable
@@ -22,9 +22,10 @@ contract ServiceProvider {
      * @dev Store value in variable
      * @param req value to store
      */
+     
      function marketDemand() public view returns (uint256){ 
-        marketDemand = 100;
-        return marketDemand;
+        demandValue = 100;
+        return demandValue;
     }
      
 
@@ -33,7 +34,7 @@ contract ServiceProvider {
      * @return value of 'Payment Amount'
      */
     function processPayments() public view returns (uint256){
-        paymentAmount = requirement + marketDemand();
+        paymentAmount = requirement + demandValue;
         return paymentAmount;
     }
 }
